@@ -9,11 +9,8 @@ __pycache__/
 .Python
 env/
 bin/
-build/
 develop-eggs/
-dist/
 eggs/
-lib/
 lib64/
 parts/
 sdist/
@@ -52,4 +49,4 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
-*.mdb
+*.db
