@@ -36,3 +36,14 @@ EveOnline Combat Log Analyzer - v0.1a
   Code Usage:
      import reVEmind
      reVEmind.run() ##runs gui app
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49779848-2', 'github.com');
+  ga('send', 'pageview');
+
+</script>
