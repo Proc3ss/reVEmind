@@ -29,7 +29,7 @@ class Engagement(object):
     @property
     def db(self):
         if self.__db is None:
-            self.__db = 'ela.db'
+            self.__db = '..\ela.db'
         return self.__db
 
     @db.setter

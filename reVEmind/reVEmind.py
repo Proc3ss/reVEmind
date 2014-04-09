@@ -10,7 +10,6 @@
 #==============================================================================
 
 """
-import sys
 from os import listdir
 from os.path import isfile, join
 import sqlite3 as lite
@@ -20,13 +19,13 @@ import PyQt4
 import PyQt4.QtSql
 
 
-from ui.revemind_ui import Ui_EveAnalyze
+from ui_files.revemind_ui import Ui_EveAnalyze
 from classes.Attack import *
 from classes.Engagement import *
 locale.setlocale(locale.LC_TIME, '')
 
 
-class EveAnalyze(PyQt4.QtGui.QMainWindow):
+class reVEmind(PyQt4.QtGui.QMainWindow):
     def __init__(self, parent=None):
         PyQt4.QtGui.QMainWindow.__init__(self, parent)
         self.ui = Ui_EveAnalyze()
@@ -120,7 +119,7 @@ class EveAnalyze(PyQt4.QtGui.QMainWindow):
         for i in range(0, len(win) + 1):
             win.removeItem(0)
         # win.clear
-        qcapp = "EveAnalyze"
+        qcapp = str(self)
         vhdrs = ("Num Hits", "Total Damage", "Avg DPS", "Best Hit", "Hit Efficiency" )
         hhdrs = ("Dealt", "Received")
 
@@ -295,19 +294,5 @@ class EveAnalyze(PyQt4.QtGui.QMainWindow):
         return found
 
 
-
-
-if __name__ == "__main__":
-    app = PyQt4.QtGui.QApplication(sys.argv)
-    db = PyQt4.QtSql.QSqlDatabase.addDatabase("QSQLITE")
-    if db:
-        db.setDatabaseName("ela.db")
-        if not db.open():
-            print "Could not open testdb database"
-            print db.lastError().driverText()
-            print db.lastError().databaseText()
-            sys.exit(1)
-
-    myapp = EveAnalyze()
-    myapp.show()
-    sys.exit(app.exec_())
+## This is used for package extensibility
+__all__ = ['reVEmind.*']

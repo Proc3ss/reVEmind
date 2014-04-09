@@ -33,6 +33,10 @@ EveOnline Combat Log Analyzer - v0.1a
     
 
 
+Code Usage:
+    import reVEmind
+    reVEmind.run() ##runs gui app
+
 
   
 
