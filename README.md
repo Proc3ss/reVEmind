@@ -7,9 +7,7 @@ EveOnline Combat Log Analyzer - v0.1a
   Get Started:
 
 
-    Download the windows_build.zip
-    
-    Extract it to a_folder
+    Download dist\reVEmind.exe
     
     Run reVEmind.exe
   
