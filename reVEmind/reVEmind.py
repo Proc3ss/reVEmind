@@ -26,13 +26,13 @@ locale.setlocale(locale.LC_TIME, '')
 
 
 class reVEmind(PyQt4.QtGui.QMainWindow):
-    def __init__(self, parent=None):
+    def __init__(self, dbpath, parent=None):
         PyQt4.QtGui.QMainWindow.__init__(self, parent)
         self.ui = Ui_EveAnalyze()
         self.ui.setupUi(self)
 
         self.setModels()
-        self.econ = lite.connect('ela.db')
+        self.econ = lite.connect(dbpath)
         self.ecursor = self.econ.cursor()
 
         self.__LogDirs = None
@@ -294,5 +294,3 @@ class reVEmind(PyQt4.QtGui.QMainWindow):
         return found
 
 
-## This is used for package extensibility
-__all__ = ['reVEmind.*']

@@ -7,3 +7,5 @@
                 #
                 #                   @author: proC3ss
 """
+
+import pyqtgraph

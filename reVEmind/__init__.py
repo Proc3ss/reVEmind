@@ -8,28 +8,11 @@
                 #                   @author: proC3ss
 """
 
-from reVEmind import reVEmind
-import PyQt4
-import sys
+import reVEmind as reVEmind
 
-
-## the run() function allows the app to easily be launched via package extension without actually needing run.py
-## (even though i have included a run.py for interoperability)
-
-def run():
-    import reVEmind
-    app = PyQt4.QtGui.QApplication(sys.argv)
-    db = PyQt4.QtSql.QSqlDatabase.addDatabase("QSQLITE")
-    if db:
-        db.setDatabaseName("ela.db")
-        if not db.open():
-            print "Could not open testdb database"
-            print db.lastError().driverText()
-            print db.lastError().databaseText()
-            sys.exit(1)
-
-    myapp = reVEmind.reVEmind()
-    myapp.show()
-    sys.exit(app.exec_())
-
-
+def _run():
+    import Run
+    Run.Run()
+if __name__ == '__main__':
+    _run()
+__all__ = ['Run', 'reVEmind']

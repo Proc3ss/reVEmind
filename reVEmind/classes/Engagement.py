@@ -29,7 +29,7 @@ class Engagement(object):
     @property
     def db(self):
         if self.__db is None:
-            self.__db = '..\ela.db'
+            self.__db = 'ela.db'
         return self.__db
 
     @db.setter
@@ -107,34 +107,34 @@ class Engagement(object):
         qry_avg_hit = "SELECT AVG(hitType) FROM Attacks WHERE attacker LIKE '%s'" % str(pilot)
 
 
-if __name__ == '__main__':
-    import datetime
-    import sys
-    import pyqtgraph as pg
-    from pyqtgraph.Qt import QtGui
-    def graph(self):
-        self.win = pg.GraphicsWindow(title="Attack Event")
-        self.win.resize(1000,600)
-        self.win.setWindowTitle('Attack Event')
-        pg.setConfigOptions(antialias=True)
-        x = [datetime.datetime.strptime(s.asArray()[5], "%Y.%m.%d %H:%M:%S") for s in combatlines if s.asArray()[0] == 'You']
-        y = [int(s.asArray()[3]) for s in combatlines if s.asArray()[0] == 'You']
-        p1 = self.win.addPlot(title="Event")
-        p1.plot(y)
-        self.win.nextRow()
-    app = QtGui.QApplication([])
-    a = Engagement()
-
-    fpath = QtGui.QFileDialog.getOpenFileName()
-    combatlines = Attack().readlog(fpath)
-    print str(a)
-    print "--------"
-    for s in a.pilots:
-        print s
-    print "--------"
-    for s in a.weapons:
-        print s
-    a.graph()
-
-    sys.exit(app.exec_())
-
+# if __name__ == '__main__':
+#     import datetime
+#     import sys
+#     import pyqtgraph as pg
+#     from pyqtgraph.Qt import QtGui
+#     def graph(self):
+#         self.win = pg.GraphicsWindow(title="Attack Event")
+#         self.win.resize(1000,600)
+#         self.win.setWindowTitle('Attack Event')
+#         pg.setConfigOptions(antialias=True)
+#         x = [datetime.datetime.strptime(s.asArray()[5], "%Y.%m.%d %H:%M:%S") for s in combatlines if s.asArray()[0] == 'You']
+#         y = [int(s.asArray()[3]) for s in combatlines if s.asArray()[0] == 'You']
+#         p1 = self.win.addPlot(title="Event")
+#         p1.plot(y)
+#         self.win.nextRow()
+#     app = QtGui.QApplication([])
+#     a = Engagement()
+#
+#     fpath = QtGui.QFileDialog.getOpenFileName()
+#     combatlines = Attack().readlog(fpath)
+#     print str(a)
+#     print "--------"
+#     for s in a.pilots:
+#         print s
+#     print "--------"
+#     for s in a.weapons:
+#         print s
+#     a.graph()
+#
+#     sys.exit(app.exec_())
+#
