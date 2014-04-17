@@ -11,12 +11,16 @@ EveOnline Combat Log Analyzer - v0.1a
     
     Run reVEmind.exe
   
+  If you dont trust me or my exe (louxthefuture) then by all means download the source files. You will need PyQT4, the rest I believe should be standard packages. Just run run.py
+  
+  For the most part you can ignore the garbage in the console, remember this is an Alpha release so I havent put alot of time into cleaning out my debug stuff.
   
   
   First Time Running:
   
-  
-    File > Select Folder (something like 'EVE\logs\Gamelogs' )
+    YOU MUST SELECT THE CORRECT LOG FOLDER!
+    
+    File > Select Folder ( the default location is C:\Users\USER\Documents\EVE\logs\Gamelogs )
     
     Actions > Import All Files
     
@@ -28,7 +32,7 @@ EveOnline Combat Log Analyzer - v0.1a
     You will still need to import future logs, however the log folder should be saved. So all you need to do next time
     is just 'Actions > Import'
     
-    
+    **Even though the location you select is saved, if you go to 'Select Folder' again it does not default to the location you picked.. if that makes sense. Just trust me, you only have to pick the location once.
 
 
 <script>
