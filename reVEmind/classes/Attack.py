@@ -11,10 +11,12 @@
 
 """
 import re
-combat_regexp = re.compile("(?:\[ )(?P<timestamp>\d+.\d+.\d+ \d+:\d+:\d+)(?: \])(?: \(combat\) \<\S+\>\<b\>)"
-                           "(?P<dammageAmmount>\d+)(?:\<[ \S]+\>)(?P<tofrom>to|from)(?:\<[ \S]+\>)"
-                           "(?P<attacked>[\S]+\s+[\S]+[\[\]\(\)\w]+)(?:\<[ \S]+\> \- )(?P<attacker_weapon>"
-                           "[\w ]+)(?: - )(?P<hitType>[\w]+)")
+combat_regexp = re.compile("(?:\[ )(?P<timestamp>\d+.\d+.\d+ \d+:\d+:\d+)"
+                           "(?: \])(?: \(combat\) \<\S+\>\<b\>)(?P<dammageAmmount>\d+)"
+                           "(?:\<[ \S]+\>)(?P<tofrom>to|from)(?:\<[ \S]+\>)"
+                           "(?P<attacked>[\S \s]+[\[\]\(\)\w]+)"
+                           "(?:\<[ \S]+\> \- )(?P<attacker_weapon>[\w ]+)"
+                           "(?: - )(?P<hitType>[\w]+)")
 class Attack(object):
     def __init__(self):
 

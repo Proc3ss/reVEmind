@@ -33,6 +33,7 @@ class reVEmind(PyQt4.QtGui.QMainWindow):
 
         self.setModels()
         self.econ = lite.connect(dbpath)
+        self.econ.text_factory = str
         self.ecursor = self.econ.cursor()
 
         self.__LogDirs = None
@@ -251,14 +252,11 @@ class reVEmind(PyQt4.QtGui.QMainWindow):
                 if(self.check_ifImported((logdir[1], f)) == 1):
                     lid = self.commitFileName(logdir[0], f)
                     aa = Attack().readlog(logpath)
-                    bb = [s.asArray() for s in aa]
-                    [d.insert(int(len(d)), lid) for d in bb]
-                    # print "line 68"
-                    try:
+                    if(len(aa) > 0):
+                        bb = [s.asArray() for s in aa]
+                        [d.insert(int(len(d)), lid) for d in bb]
+                        # print "line 68"
                         self.writeLogFile(bb)
-                    except:
-                        raise
-                    finally:
                         try:
                             self.econ.commit()
                         except:
@@ -266,10 +264,15 @@ class reVEmind(PyQt4.QtGui.QMainWindow):
                         finally:
                             self.ecursor.execute(str("UPDATE FilesImported SET completed=1 WHERE FileId=%s;" % lid))
                             self.econ.commit()
+        print "done"
 
     def writeLogFile(self, vals):
         vals = [s for s in vals]
-        self.ecursor.executemany("INSERT INTO Attacks VALUES (?, ?, ?, ?, ?, ?, ?)", vals)
+        # print ""
+        try:
+            self.ecursor.executemany("INSERT INTO Attacks VALUES (?, ?, ?, ?, ?, ?, ?)", vals)
+        except:
+            raise
 
     def updateImports(self):
         print "Updating folders from LogDirs"
