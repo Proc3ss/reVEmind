@@ -8,23 +8,15 @@ FIXED:
  - Updated combat regexp to include single word names and all digit names
 
 ADDED:
- - Ive added two different build wich both do the same thing. The only difference being that one is a single executable and the other contains a bunch of files for you to look at if your into that sort of thing. Both were built at the same time and should work equally well. They are named EXE and Full_Dist
+ - Ive added two different build wich both do the same thing. The only difference being that one is a single executable and the other contains a bunch of files for you to look at if your into that sort of thing. Both were built at the same time and should work equally well. They are named EXE and Full_Dist.
+
+GET STARTED:
+ - Download one of the above mentioned builds.
+ - Run reVEmind.exe
 
 
-  Get Started:
-
-
-    Download one of the above mentioned builds.
-    
-    Run reVEmind.exe
-  
-    
-  For the most part you can ignore the garbage in the console, remember this is an Alpha release so I havent put alot of time into cleaning out my debug stuff.
-  
-  
-  First Time Running: <-!!!!!THIS IS IMPORTANT
-  
-    YOU MUST SELECT THE CORRECT LOG FOLDER!   
+First Time Running: <-!!!!!THIS IS IMPORTANT
+YOU MUST SELECT THE CORRECT LOG FOLDER!   
     
     File > Select Folder ( the default location is C:\Users\USER\Documents\EVE\logs\Gamelogs )
     
