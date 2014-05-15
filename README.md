@@ -1,24 +1,30 @@
 reVEmind
 ========
 
-EveOnline Combat Log Analyzer - v0.1a
+EveOnline Combat Log Analyzer - v0.2a
+
+FIXED:
+ - Fixed Sqlite crash during import 
+ - Updated combat regexp to include single word names and all digit names
+
+ADDED:
+ - Ive added two different build wich both do the same thing. The only difference being that one is a single executable and the other contains a bunch of files for you to look at if your into that sort of thing. Both were built at the same time and should work equally well. They are named EXE and Full_Dist
 
 
   Get Started:
 
 
-    Download dist\reVEmind.exe
+    Download one of the above mentioned builds.
     
     Run reVEmind.exe
   
-  If you dont trust me or my exe (louxthefuture) then by all means download the source files. You will need PyQT4, the rest I believe should be standard packages. Just run run.py
-  
+    
   For the most part you can ignore the garbage in the console, remember this is an Alpha release so I havent put alot of time into cleaning out my debug stuff.
   
   
-  First Time Running:
+  First Time Running: <-!!!!!THIS IS IMPORTANT
   
-    YOU MUST SELECT THE CORRECT LOG FOLDER!
+    YOU MUST SELECT THE CORRECT LOG FOLDER!   
     
     File > Select Folder ( the default location is C:\Users\USER\Documents\EVE\logs\Gamelogs )
     
@@ -34,6 +40,9 @@ EveOnline Combat Log Analyzer - v0.1a
     
     **Even though the location you select is saved, if you go to 'Select Folder' again it does not default to the location you picked.. if that makes sense. Just trust me, you only have to pick the location once.
 
+
+built using:
+pyinstaller reVEmind\run.py --onefile --distpath=EXE --name="reVEmind" && pyinstaller reVEmind\run.py --distpath=Full_Build --name="reVEmind"
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
